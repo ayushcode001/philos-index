@@ -11,8 +11,8 @@
 [![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?logo=vuedotjs&logoColor=white)](https://vuejs.org)
 [![XGBoost](https://img.shields.io/badge/XGBoost-ML-FF6600)](https://xgboost.readthedocs.io)
 [![spaCy](https://img.shields.io/badge/spaCy-NLP-09A3D5?logo=spacy&logoColor=white)](https://spacy.io)
-**🚀 Live Demo:** [https://philos-index.vercel.app](https://philos-index.vercel.app)  
-**⚙️ API Endpoint:** [https://philos-index.onrender.com](https://philos-index.onrender.com)
+** Live Demo:** [https://philos-index.vercel.app](https://philos-index.vercel.app)  
+** API Endpoint:** [https://philos-index.onrender.com](https://philos-index.onrender.com)
 
 ---
 
