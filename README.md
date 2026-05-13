@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏛️ The Philomath Index
+#  The Philomath Index
 
 ### Linguistic Regression for Philosophical Density
 
