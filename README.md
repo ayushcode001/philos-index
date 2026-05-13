@@ -20,7 +20,7 @@
 
 </div>
 
-## 📋 The Problem
+## The Problem
 
 Standard readability metrics — **Flesch-Kincaid**, **Gunning Fog**, **SMOG** — measure surface-level difficulty using syllable counts and sentence lengths. They are categorically blind to **conceptual compression**: the tendency of philosophical prose to encode extraordinary intellectual weight into syntactically simple structures.
 
@@ -69,7 +69,7 @@ Each text snippet is transformed into an 11-dimensional feature vector. These ar
 | SMOG | Polysyllabic words | Fails on short philosophical sentences |
 | **Philomath Index** | **11 linguistic axes** | **Captures semantic density, not just surface difficulty** |
 
-## 📊 The Five Strata
+## The Five Strata
 
 The model was trained on a curated corpus spanning five difficulty levels:
 
@@ -124,7 +124,7 @@ philomath-index/
 | **Frontend** | Vue 3 + Vite | Composition API, fast HMR |
 | **Feature Scaling** | scikit-learn StandardScaler | Consistent feature normalization |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
