@@ -24,10 +24,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-print("Loading NLP and ML Models into memory")
+SPACY_MODEL = os.environ.get("SPACY_MODEL", "en_core_web_sm")
+print(f"Loading NLP model ({SPACY_MODEL}) and ML Models into memory")
 
 try:
-    nlp = spacy.load('en_core_web_lg')
+    nlp = spacy.load(SPACY_MODEL)
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     scaler_path = os.path.join(BASE_DIR, "models", "scaler.pkl")
@@ -116,5 +117,5 @@ async def analyze_text(request: TextRequest):
 
 
 if __name__ == "__main__":
-    # Runs the server locally on port 8000
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)

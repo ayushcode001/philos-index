@@ -8,6 +8,8 @@ venv/
 
 # ML Models (large binary files)
 *.pkl
+# Exception: keep the small trained model files needed for deployment
+!backend/models/*.pkl
 
 # Node
 node_modules/
