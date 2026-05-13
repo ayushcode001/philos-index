@@ -26,7 +26,7 @@ A sentence by Nietzsche may contain fewer words than a line from a children's bo
 
 **The Philomath Index** fixes this. It's a regression-based scoring engine that predicts a **Complexity Score (0–100)** by modelling syntactic depth, lexical rarity, and abstractness ratios as first-class features.
 
-## ⚡ How It Works
+##  How It Works
 
 ```
 User pastes text → spaCy parses it → 11 linguistic features extracted → XGBoost predicts score → Score + breakdown returned
@@ -34,13 +34,13 @@ User pastes text → spaCy parses it → 11 linguistic features extracted → XG
 
 ```mermaid
 graph LR
-    A["📝 Raw Text"] --> B["🧠 spaCy NLP<br/>Dependency Parsing"]
-    B --> C["📊 Feature Extraction<br/>11 Linguistic Features"]
-    C --> D["🤖 XGBoost Model<br/>Trained on 5-stratum corpus"]
-    D --> E["🎯 Complexity Score<br/>0–100 + Feature Breakdown"]
+    A[" Raw Text"] --> B[" spaCy NLP<br/>Dependency Parsing"]
+    B --> C[" Feature Extraction<br/>11 Linguistic Features"]
+    C --> D[" XGBoost Model<br/>Trained on 5-stratum corpus"]
+    D --> E[" Complexity Score<br/>0–100 + Feature Breakdown"]
 ```
 
-## 🔬 The 11 Engineered Features
+##  The 11 Engineered Features
 
 Each text snippet is transformed into an 11-dimensional feature vector. These are the **intellectual core** of the project — every feature captures a different axis of linguistic complexity:
 
@@ -73,15 +73,15 @@ The model was trained on a curated corpus spanning five difficulty levels:
 
 | Stratum | Score Band | Representative Authors |
 |---------|-----------|----------------------|
-| 🟢 Foundational | 0–20 | Aesop, Brothers Grimm, Lewis Carroll |
-| 🟡 General Prose | 20–40 | Mark Twain, O. Henry, R.L. Stevenson |
-| 🟠 Literary Fiction | 40–60 | Dickens, Dostoevsky, Mary Shelley |
-| 🔴 Dense Fiction & Essays | 60–80 | Kafka, Emerson, Thoreau, Machiavelli |
-| ⚫ Philosophical Treatises | 80–100 | Kant, Hegel, Nietzsche, Wittgenstein, Spinoza |
+|  Foundational | 0–20 | Aesop, Brothers Grimm, Lewis Carroll |
+|  General Prose | 20–40 | Mark Twain, O. Henry, R.L. Stevenson |
+|  Literary Fiction | 40–60 | Dickens, Dostoevsky, Mary Shelley |
+|  Dense Fiction & Essays | 60–80 | Kafka, Emerson, Thoreau, Machiavelli |
+|  Philosophical Treatises | 80–100 | Kant, Hegel, Nietzsche, Wittgenstein, Spinoza |
 
 The corpus was built by scraping 25+ books from Project Gutenberg, segmenting into ~300-word snippets, and labelling with a hybrid formula combining Gunning Fog, author difficulty rank, Zipf penalty, and philosophical vocabulary density.
 
-## 🗄️ Project Structure
+##  Project Structure
 
 ```
 philomath-index/
@@ -111,7 +111,7 @@ philomath-index/
 └── README.md
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology | Why |
 |-------|-----------|-----|
@@ -174,7 +174,7 @@ Set `VITE_API_URL` environment variable to point the frontend to a deployed back
 VITE_API_URL=https://your-backend-url.com
 ```
 
-## 📡 API Reference
+##  API Reference
 
 ### `POST /analyze`
 
@@ -211,7 +211,7 @@ Analyze text and return the Philomath Complexity Score with feature breakdown.
 
 Health check — returns `{"status": "Philomath Engine is Active."}`.
 
-## 📚 The Philosophical Abstract Noun Lexicon
+##  The Philosophical Abstract Noun Lexicon
 
 A hand-curated list of **500+ philosophical abstract nouns** spanning:
 
@@ -225,7 +225,7 @@ A hand-curated list of **500+ philosophical abstract nouns** spanning:
 
 This lexicon addresses WordNet's inconsistent coverage of domain-specific philosophical vocabulary and is a genuine research contribution of this project.
 
-## 🧪 Ground Truth Labelling
+##  Ground Truth Labelling
 
 Training labels are generated using a **four-component hybrid formula**:
 
@@ -237,16 +237,13 @@ This avoids reliance on any single heuristic by blending:
 3. **Vocabulary rarity** (inverted Zipf frequency scores)
 4. **Domain vocabulary** (philosophical term density)
 
-## ⚠️ Known Limitations
+##  Known Limitations
 
 - **Western philosophical bias** — corpus is dominated by European tradition (Kant, Hegel, Nietzsche). Eastern philosophy (Confucius, Nagarjuna, Zhuangzi) is underrepresented.
 - **Translation artifacts** — many texts are translated from German/French/Russian; translation style may affect feature distributions.
 - **spaCy model size** — `en_core_web_lg` is ~750MB, which impacts cold-start time and deployment memory requirements.
 - **No SHAP explanations yet** — per-feature contribution analysis is planned but not yet implemented in the API.
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
